@@ -6,7 +6,7 @@ Converts all selected `<label>` tags into `<input value="LABEL_TEXT">`.
 
 ## Demo
 
-Plugin demo: [JQuery cLabel](http://lab.aam.me/jquery-clabel/#demo)
+Plugin demo: [JQuery cLabel](http://lab.aam.me/jquery/clabel/#demo)
 
 ## How to use plugin
 
