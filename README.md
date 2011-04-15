@@ -14,8 +14,8 @@ Make sure that you have jQuery included before cLabel plugin.
 
 *HTML Code:*
 
-    <label for="name" class="clabel">Name</label>
-    <input type="text" id="name" name="name" value="" />
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" class="clabel" value="" />
 
 
 *JS Code:*
