@@ -12,35 +12,44 @@
  **/
 
 (function($){
-    $.fn.clabel = function(options) {  
+    $.fn.clabel = function(options) {
         var defaults = {
-            class:         "clabel-set",
-            class_focus:   "",
-            strip_garbage: true
+            class:        "clabel-set",
+            trim: 		  true,    /* trim spaces */
+            strip:        /[\:]/g, /* use regex to trim garbage */
+            convert_case: ""       /* l - lower case, u - upper case */
         };
 
-        var options = $.extend(defaults, options);  
+        var options = $.extend(defaults, options);
 
         return this.each(function() {
             var label = $('label[for=' + $(this).attr('id') + ']').text();
+            $('label[for=' + $(this).attr('id') + ']').remove();
 
-            if (options.strip_garbage) {
-            	label = label.replace(/[\:]/g, "");
+            if (options.strip != "") {
+            	label = label.replace(options.strip, "");
+            }
+
+            if (options.trim) {
             	label = $.trim(label);
             }
 
-            $('label[for=' + $(this).attr('id') + ']').remove();
+            if (options.convert_case == "l") {
+            	label = label.toLowerCase();
+            }
+
+            if (options.convert_case == "u") {
+            	label = label.toUpperCase();
+            }
 
             $(this).addClass(options.class);
             $(this).val(label);
 
             $($(this)).unbind().bind("blur focus", function() {
                 if ($(this).hasClass(options.class)) {
-                    $(this).val("");
-                    $(this).removeClass(options.class);
+                    $(this).removeClass(options.class).val("");
                 } else if ($(this).val() == "") {
-                    $(this).addClass(options.class);
-                    $(this).val(label);
+                    $(this).addClass(options.class).val(label);
                 }
             });
         });
