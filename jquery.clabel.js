@@ -14,10 +14,10 @@
 (function($){
     $.fn.clabel = function(options) {
         var defaults = {
-            class:        "clabel-set",
-            trim: 		  true,    /* trim spaces */
-            strip:        /[\:]/g, /* use regex to trim garbage */
-            convert_case: ""       /* l - lower case, u - upper case */
+            setClass:    "clabel-set", /* class for the element with a label */
+            trim: 		 true,         /* trim spaces */
+            strip:       /[\:]/g,      /* use regex to trim garbage */
+            changeCase:  ""           /* l - lower case, u - upper case */
         };
 
         var options = $.extend(defaults, options);
@@ -34,22 +34,22 @@
             	label = $.trim(label);
             }
 
-            if (options.convert_case == "l") {
+            if (options.changeCase == "l") {
             	label = label.toLowerCase();
             }
 
-            if (options.convert_case == "u") {
+            if (options.changeCase == "u") {
             	label = label.toUpperCase();
             }
 
-            $(this).addClass(options.class);
+            $(this).addClass(options.setClass);
             $(this).val(label);
 
             $($(this)).unbind().bind("blur focus", function() {
-                if ($(this).hasClass(options.class)) {
-                    $(this).removeClass(options.class).val("");
+                if ($(this).hasClass(options.setClass)) {
+                    $(this).removeClass(options.setClass).val("");
                 } else if ($(this).val() == "") {
-                    $(this).addClass(options.class).val(label);
+                    $(this).addClass(options.setClass).val(label);
                 }
             });
         });
