@@ -1,7 +1,5 @@
 # jQuery cLabel - Compact &lt;label&gt; plugin
 
-## About
-
 Converts all selected `<label>` tags into `<input value="LABEL_TEXT">`.
 
 ## Demo
