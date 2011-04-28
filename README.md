@@ -25,10 +25,6 @@ Make sure that you have jQuery included before cLabel plugin.
 
 Enjoy!
 
-## Known issues
-
-- Doesn't work when the control elements are within the contents of the LABEL element
-
 ## License
 
 Dual licensed under the MIT and GPL licenses.
