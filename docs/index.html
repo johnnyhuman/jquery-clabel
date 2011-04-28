@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jQuery cLabel - Compact label plugin</title>
+    <meta name="description" content="jQuery cLabel - Compact label plugin" />
+
+    <link href="css/template.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+	<!-- Syntax Highlighter styles -->
+    <link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="css/syntaxhighlighter/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/jquery-1.5.2.min.js"></script>
+    <script src="js/jquery.idTabs.min.js"></script>
+    <script src="../jquery.clabel.js"></script>
+
+	<!-- Syntax Highlighter -->
+	<script src="js/syntaxhighlighter/shCore.js" type="text/javascript"></script>
+	<script src="js/syntaxhighlighter/shAutoloader.js" type="text/javascript"></script>
+	<script src="js/syntaxhighlighter/shBrushXml.js" type="text/javascript"></script>
+	<script src="js/syntaxhighlighter/shBrushJScript.js" type="text/javascript"></script>
+	<script src="js/syntaxhighlighter/shBrushCss.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".clabel").clabel();
+            $(".search").clabel();
+        });
+
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.all();
+    </script>
+</head>
+<body>
+
+<div class="wrapper">
+    <a class="ribbon" href="https://github.com/johnnyhuman/jquery-clabel" target="_blank" 
+    	title="Fork me on GitHub"><span class="ribbon-img">&nbsp;</span></a>
+
+    <div class="header">
+        <h1>jQuery cLabel</h1>
+        <span class="slogan">compact &lt;label&gt; plugin</b></span>
+
+        <p class="description">
+        	<a href="https://github.com/johnnyhuman/jquery-clabel" 
+        	title="GitHub repository">jQuery cLabel</a> plugin converts all 
+        	&lt;label&gt;s of selected text &lt;input&gt;s into the 
+        	&lt;input value="label_text"&gt;. It's less than 1kb in size
+        	(650 bytes minified) and was created to bring more comfort to users.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Installation</h2>
+
+		<p>This plugin <a href="#requirements" class="pseudo-link c-text">requires</a> jQuery JavaScript library.</p>
+
+		<p>
+			<a href="http://jquery.com/">Download jQuery</a> and include it 
+			in the head of your HTML document.<br />
+			Alternatively you can include it using jQuery CDN by adding the following code:
+		</p>
+
+<div class="code">
+<pre class="brush: html;">
+	&lt;script src="http://code.jquery.com/jquery-1.5.2.min.js"&gt;&lt;/script&gt;
+</pre>
+</div>
+
+		<p>
+			<a href="#download">Download cLabel plugin</a> 
+			and include it in the head of your HTML document <em>after</em> jQuery library.<br />
+		</p>
+
+<pre class="brush: html;">
+	&lt;script src="js/jquery.clabel.js"&gt;&lt;/script&gt;
+</pre>
+
+		<p>Add the following script after the previous two:</p>
+
+<pre class="brush: html;">
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function() {
+            $(".clabel").clabel();
+        });
+    &lt;/script&gt;
+</pre>
+
+		<p>
+			Add the "clabel" class to &lt;input&gt; text elements to convert 
+			their &lt;label&gt;s into the &lt;input value="label_text"&gt;.
+			Make sure that the labels have correct "for" attributes. 
+		</p>
+
+<pre class="brush: html;">
+	&lt;label for="q"&gt;Search:&lt;/label&gt;
+	&lt;input type="text" name="q" id="q" class="clabel" /&gt;
+</pre>
+
+		<p>
+			Write CSS code to make your forms look nice with JS enabled as well 
+			as without it.
+		</p>
+
+		<p>Enjoy the result and happines of your website users.</p>
+    </div>
+
+    <div class="section">
+    	<h2>Demo</h2>
+
+		<div class="tabs">
+			<ul class="idTabs">
+				<li><a href="#example-1">Example 1</a></li>
+				<li><a href="#js-code-1">JS Code</a></li>
+				<li><a href="#html-code-1">HTML Code</a></li>
+				<li><a href="#css-code-1">CSS Code</a></li>
+			</ul>
+
+			<div id="example-1" class="tab">
+				<div class="auth">
+					<div><p><strong>Auth form:</strong></p></div>
+
+					<form action="" method="post">
+						<label for="login">Login</label>
+						<input type="text" name="login" id="login" class="clabel" /><br />
+
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" class="clabel" />
+
+						<div class="button-wrapper">
+							<input type="submit" value="Sign In" /> <a href="#">Amnesia?</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div id="js-code-1" class="tab">
+<pre class="brush: js;">
+$(document).ready(function() {
+    $(".clabel").clabel();
+});
+</pre>
+			</div>
+
+			<div id="html-code-1" class="tab">
+<pre class="brush: html;">
+&lt;form method="get" action=""&gt;
+    &lt;label for="login"&gt;Login&lt;/label&gt;
+    &lt;input type="text" class="clabel" id="login" name="login">
+    &lt;br /&gt;
+
+    &lt;label for="password">Password&lt;/label&gt;
+    &lt;input type="password" class="clabel" id="password"
+    	name="password"&gt;&lt;br /&gt;
+
+    &lt;input type="submit" value="Sign In"&gt;
+&lt;/form&gt;
+</pre>
+			</div>
+
+			<div id="css-code-1" class="tab">
+<pre class="brush: css;">
+.auth label { display: block; }
+
+/* See the page source code for full buttons/inputs styling */
+</pre>
+			</div>
+		</div>
+
+		<div class="tabs">
+			<ul class="idTabs">
+				<li><a href="#example-2">Example 2</a></li>
+				<li><a href="#js-code-2">JS Code</a></li>
+				<li><a href="#html-code-2">HTML Code</a></li>
+				<li><a href="#css-code-2">CSS Code</a></li>
+			</ul>
+
+			<div id="example-2" class="tab">
+				<div><p><strong>Search form:</strong></p></div>
+
+				<form action="" method="get">
+					<label for="q">Search: <input type="text" name="q" id="q" 
+						class="search" /></label><input type="submit" value=" " 
+						class="button-search" />
+				</form>
+			</div> 
+
+			<div id="js-code-2" class="tab">
+<pre class="brush: js;">
+$(document).ready(function() {
+    $(".search").clabel();
+});
+</pre>
+			</div>
+
+			<div id="html-code-2" class="tab">
+<pre class="brush: html;">
+&lt;form method="get" action=""&gt;
+    &lt;label for="q"&gt;Search: &lt;input type="text" name="q" id="q" 
+        class="search" /&gt;&lt;/label&gt;&lt;input type="submit" value=" " 
+        class="button-search" /&gt;
+&lt;/form&gt;
+</pre>
+			</div>
+
+			<div id="css-code-2" class="tab">
+<pre class="brush: css;">
+#q {
+	border-right: none !important;
+    -moz-border-radius-topright: 0px !important;
+    -webkit-border-top-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    -moz-border-radius-bottomright: 0px !important;
+    -webkit-border-bottom-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.button-search {
+	width: 30px;
+	padding: 5px !important;
+	background: url("../images/search.png") 4px 7px 
+		no-repeat !important;
+
+	border: 1px solid #bbbbbb !important;
+    border-left: none !important;
+    border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -khtml-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius-topright: 5px !important;
+    -webkit-border-top-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    -moz-border-radius-bottomright: 5px !important;
+    -webkit-border-bottom-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+/* See the page source code for full buttons/inputs styling */
+</pre>
+			</div>
+		</div>
+    </div>
+
+    <div class="section">
+        <h2 id="requirements">Requirements</h2>
+
+        <p><a href="http://jquery.com">jQuery 1.3+</a></p>
+    </div>
+
+    <div class="section">
+        <h2>Browser compatibility</h2>
+
+        <p>Firefox 3+, Safari 3+, Chrome, Opera 9+, IE 6+</p>
+    </div>
+
+	<div class="section">
+        <h2>License</h2>
+        <p>Dual licensed under the MIT and GPL licenses.</p>
+        <p><a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a><br /><a href="http://www.opensource.org/licenses/mit-license.php">GPL License</a></p>
+    </div>
+
+	<div class="section">
+        <h2 id="download">Download</h2>
+
+		<p><a href="http://lab.aam.me/jquery/clabel/release/jquery-clabel-1.0.zip"
+		>Download jQuery cLablel v1.0 (.zip)</a><br /><a 
+		href="http://lab.aam.me/jquery/clabel/release/jquery-clabel-1.0.tar.gz"
+		>Download jQuery cLablel v1.0 (.tar.gz)</a></p>
+
+        <p>Alternatively you can download the latest version from GitHub repository 
+        in either <a href="http://github.com/johnnyhuman/jquery-clabel/zipball/master"
+        class="substratum trans">ZIP</a> or <a 
+        href="http://github.com/johnnyhuman/jquery-clabel/tarball/master" 
+        class="substratum trans">TAR</a> formats.</p>
+
+        <p>You can also clone the project with <a href="http://git-scm.com/">Git</a> by running:</p>
+
+        <pre class="command">$ git clone git://github.com/johnnyhuman/jquery-clabel</pre>
+    </div>
+
+	<div class="section">
+        <h2 id="contact">Contact</h2>
+
+		<h3>Bugs</h3>
+
+		<p>Please create a <a href="https://github.com/johnnyhuman/jquery-clabel/issues">ticket 
+		on GitHub</a>. Describe the problem and the way how to reproduce it. 
+		Don't forget to include the jQuery version, browser and operating system information.</p>
+
+		<h3>Help and Support</h3>
+
+		<p>Send me a <a href="https://github.com/johnnyhuman">private message on 
+		GitHub</a> and I will try to help you.</p>
+    </div>
+
+	<div class="section">
+        <h2 id="contact">Mission & Philosophy</h2>
+
+		<p>Hello <span title="Maybe robot? Or maybe AI? Who are you? Discover yourself. Don't waste your life, act now!">Human!
+		</span>
+		<br /><br />
+		My name is Johnny.<br />I'm free/open source software developer and activist.<br />
+		My mission is to make all human beings happy by creating useful, easy to 
+		use and beautyful apps which is open, free of licensing restrictions 
+		and can be easily used by other people in all kind of projects.
+		<br /><br />
+		Join the free software movement. Create free software!<br />
+		Use <a href="http://github.org">GitHub</a> to host your code and to 
+		collaborate with other developers.
+		<br /><br />
+		Learn more about free/open source software philosophy: <a 
+		href="http://www.fsf.org">Free Software Foundation</a>, <a 
+		href="http://www.opensource.org">Open Source Initiative</a>, <a 
+		href="http://www.gnu.org">The GNU Project</a>, <a 
+		href="http://creativecommons.org/">Creative Commons</a>.
+		<br /><br />
+		<strong>Information should be free and available for everyone.<br />
+		People should support each other.
+		</strong></p>
+    </div>
+
+	<div class="section">
+        <h2 id="contact">Donations</h2>
+
+		<p>If you found my projects useful, please support the developer, make a small donation.</p>
+
+		<p>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="NEKRYF63U39X6">
+			<input type="image" src="https://www.paypalobjects.com/WEBSCR-640-20110401-1/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/WEBSCR-640-20110401-1/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p><a href="https://github.com/johnnyhuman/jquery-clabel">jQuery cLabel</a> by <a href="https://github.com/johnnyhuman" title="Johnny Human" class="c-grey">Johnny Human</a></p> 
+    <p>May all beings be Happy!</p>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img src="images/cc-80x15.png" alt="Creative Commons License" height="15" width="80"></a><br />
+    Except where otherwise noted, content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" class="subfoot">Creative Commons Attribution 3.0 License</a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+/**
+ * jQuery cLabel plugin
+ * Documentation stylesheet.
+ *
+ * @author Johnny Human <https://github.com/johnnyhuman>
+ * @license Dual licensed under the MIT and GPL licenses
+ */
+
+.auth label { display: block; }
+
+#q, #q1 {
+	padding: 7px !important;
+	margin: 0 !important;
+	height: 16px;
+	border-right: none !important;
+    -moz-border-radius-topright: 0px !important;
+    -webkit-border-top-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    -moz-border-radius-bottomright: 0px !important;
+    -webkit-border-bottom-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.button-search {
+	height: 32px;
+	width: 30px;
+	padding: 0 !important;
+	margin: 0 !important;
+	background: url("../images/search.png") 3px 8px no-repeat !important;
+
+	border: 1px solid #bbbbbb !important;
+    border-left: none !important;
+    border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -khtml-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius-topright: 5px !important;
+    -webkit-border-top-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    -moz-border-radius-bottomright: 5px !important;
+    -webkit-border-bottom-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
