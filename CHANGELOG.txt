@@ -1,3 +1,9 @@
+1.0 (28 April 2011)
+
+ * Fixed issue #3 (Inputs within labels bug)
+ * Documentation added
+ * Live demo added and use cases
+
 0.1 (20 April 2011)
 
  * Initial release
